@@ -1,0 +1,54 @@
+/* Puerto Sol HUD + menus. Warm sunset palette, chunky readable type. */
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0e1420; font-family: 'Segoe UI', system-ui, sans-serif; color: #fff; }
+#app, #view { position: fixed; inset: 0; width: 100%; height: 100%; }
+#view { display: block; touch-action: none; }
+.hidden { display: none !important; }
+#hud { position: fixed; inset: 0; pointer-events: none; z-index: 5; }
+#healthBox { position: absolute; top: 14px; left: 14px; width: 240px; }
+#healthLabel { font-weight: 800; letter-spacing: 2px; font-size: 13px; text-shadow: 0 1px 3px #000; }
+#healthBar, #armorBar { height: 12px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.5); margin-top: 4px; }
+#armorBar { height: 7px; }
+#healthFill { height: 100%; width: 100%; background: linear-gradient(90deg, #2f9e44, #7ee081); }
+#armorFill { height: 100%; width: 0%; background: linear-gradient(90deg, #2e6fdb, #8ec2ff); }
+#cashLine { margin-top: 5px; font-weight: 700; font-size: 15px; text-shadow: 0 1px 3px #000; }
+#wantedBox { position: absolute; top: 14px; right: 16px; text-align: right; }
+#stars { font-size: 26px; letter-spacing: 3px; text-shadow: 0 2px 4px #000; }
+#stars .star { color: rgba(255,255,255,.35); }
+#stars .star.on { color: #ffd23f; }
+#heatBar { width: 150px; height: 6px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.4); margin: 4px 0 3px auto; }
+#heatFill { height: 100%; width: 0%; background: #ff4d6d; }
+#wantedLabel { font-weight: 800; letter-spacing: 3px; font-size: 13px; text-shadow: 0 1px 3px #000; }
+#wantedLabel.hot { color: #ff5b6e; }
+#missionBox { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); text-align: center; width: 520px; max-width: 60vw; }
+#missionTitle { font-weight: 900; font-size: 17px; letter-spacing: 2px; color: #ffd23f; text-shadow: 0 2px 4px #000; }
+#missionObj { font-size: 14px; margin-top: 3px; text-shadow: 0 1px 3px #000; background: rgba(0,0,0,.35); padding: 3px 8px; border-radius: 4px; }
+#missionTimer { font-size: 13px; font-weight: 700; margin-top: 3px; text-shadow: 0 1px 3px #000; }
+#minimap { position: absolute; left: 14px; bottom: 14px; width: 220px; height: 220px; border: 2px solid rgba(255,255,255,.75); border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.5); background: #1e7fa8; }
+#speedBox { position: absolute; right: 18px; bottom: 16px; text-align: right; text-shadow: 0 2px 4px #000; }
+#speed { font-size: 44px; font-weight: 900; }
+#speedUnit { font-size: 15px; font-weight: 700; }
+#carName { font-size: 14px; font-weight: 800; letter-spacing: 2px; color: #ffd23f; }
+#carHealth { width: 150px; height: 7px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.4); margin: 4px 0 0 auto; }
+#carHealthFill { height: 100%; width: 100%; background: #2f9e44; }
+#prompt { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: 700; background: rgba(0,0,0,.6); padding: 7px 14px; border-radius: 5px; border: 1px solid rgba(255,255,255,.35); }
+#prompt:empty { display: none; }
+#toast { position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%); width: 560px; max-width: 80vw; text-align: center; font-size: 15px; background: rgba(10,14,22,.78); padding: 9px 14px; border-radius: 6px; border-left: 4px solid #ffd23f; transition: opacity .4s; }
+#crosshair { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 26px; font-weight: 900; color: rgba(255,255,255,.9); text-shadow: 0 0 4px #000; }
+#damageFlash { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(255,0,0,.55) 100%); opacity: 0; pointer-events: none; }
+#centerMsg { position: absolute; top: 24%; left: 50%; transform: translateX(-50%); font-size: 30px; font-weight: 900; letter-spacing: 3px; color: #ffd23f; text-shadow: 0 3px 8px #000; text-align: center; width: 90vw; }
+#startScreen { position: fixed; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, rgba(255,122,26,.55), rgba(16,20,32,.88) 55%), radial-gradient(circle at 70% 20%, rgba(255,210,63,.35), transparent 55%); }
+#titleCard { text-align: center; max-width: 640px; padding: 20px; }
+#logoSub { letter-spacing: 5px; font-size: 12px; font-weight: 800; color: #ffd23f; }
+#titleCard h1 { font-size: 92px; line-height: .9; margin: 10px 0; font-weight: 900; letter-spacing: 4px; text-shadow: 0 6px 24px rgba(0,0,0,.7); }
+#tagline { font-size: 16px; color: #e8e3d8; }
+#storyBox { background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.25); border-radius: 8px; padding: 12px 16px; font-size: 14px; line-height: 1.5; margin: 14px 0; }
+#playBtn, #continueBtn, #pauseMenu button, #respawnBtn { pointer-events: auto; cursor: pointer; font-size: 18px; font-weight: 900; letter-spacing: 2px; padding: 13px 30px; margin: 6px; border: none; border-radius: 6px; background: #ffd23f; color: #111; box-shadow: 0 4px 0 #b8901a; }
+#playBtn:hover, #continueBtn:hover, #pauseMenu button:hover, #respawnBtn:hover { filter: brightness(1.1); }
+#continueBtn { background: #2f9e44; color: #fff; box-shadow: 0 4px 0 #1d5c2a; }
+#controlsList { margin-top: 16px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; color: #d8d2c4; }
+#controlsList b { color: #ffd23f; }
+#startFoot { margin-top: 14px; font-size: 11px; color: rgba(255,255,255,.55); }
+#pauseMenu, #deadScreen { position: fixed; inset: 0; z-index: 11; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(8,10,16,.78); text-align: center; }
+#pauseMenu h2, #deadScreen h2 { font-size: 44px; letter-spacing: 6px; margin: 0 0 12px; }
+#pauseMenu button { display: block; width: 300px; font-size: 16px; }
+#pauseInfo, #deadText { margin-top: 10px; font-size: 15px; color: #e8e3d8; max-width: 480px; line-height: 1.5; }

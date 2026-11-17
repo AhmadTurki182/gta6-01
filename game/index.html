@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puerto Sol — Open World Crime</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="view"></canvas>
+  <div id="hud" class="hidden">
+    <div id="healthBox"><div id="healthLabel">DARIO</div><div id="healthBar"><div id="healthFill"></div></div><div id="armorBar"><div id="armorFill"></div></div><div id="cashLine">$<span id="cash">250</span> &nbsp;REP <span id="rep">0</span></div></div>
+    <div id="wantedBox"><div id="stars"></div><div id="heatBar"><div id="heatFill"></div></div><div id="wantedLabel">CLEAN</div></div>
+    <div id="missionBox"><div id="missionTitle">PUERTO SOL</div><div id="missionObj">Free roam — press M for a job</div><div id="missionTimer"></div></div>
+    <canvas id="minimap" width="220" height="220"></canvas>
+    <div id="speedBox" class="hidden"><span id="speed">0</span><span id="speedUnit"> km/h</span><div id="carName">VENTO GT</div><div id="carHealth"><div id="carHealthFill"></div></div></div>
+    <div id="prompt"></div>
+    <div id="toast"></div>
+    <div id="crosshair" class="hidden">+</div>
+    <div id="damageFlash"></div>
+    <div id="centerMsg" class="hidden"></div>
+  </div>
+  <div id="startScreen">
+    <div id="titleCard">
+      <div id="logoSub">A SUN-SOAKED OPEN WORLD CRIME STORY</div>
+      <h1>PUERTO<br>SOL</h1>
+      <p id="tagline">Bike courier. Framed driver. One city to burn down —<br>starting with the Halcyon Group.</p>
+      <div id="storyBox">
+        <b>Dario Fuentes</b> delivered parcels for a living until the Halcyon Group
+        framed him for a heist he never drove. Reporter <b>Lola Vega</b> has the
+        proof — if Dario can steal it back, job by job, across Puerto Sol.
+      </div>
+      <button id="playBtn">▶ &nbsp;START ENGINE</button>
+      <button id="continueBtn" class="hidden">CONTINUE — <span id="continueInfo"></span></button>
+      <div id="controlsList">
+        <span><b>WASD</b> move / drive</span><span><b>Mouse</b> look / aim</span><span><b>LMB</b> punch / shoot</span>
+        <span><b>Shift</b> sprint / boost</span><span><b>Space</b> jump / handbrake</span><span><b>F</b> enter / exit car</span>
+        <span><b>E</b> interact</span><span><b>M</b> next mission</span><span><b>Esc</b> pause</span>
+      </div>
+      <div id="startFoot">Original game — no Rockstar / GTA content. three.js vendored. Sound starts on click.</div>
+    </div>
+  </div>
+  <div id="pauseMenu" class="hidden">
+    <h2>PAUSED</h2>
+    <button id="resumeBtn">RESUME</button>
+    <button id="saveBtn">SAVE GAME</button>
+    <button id="restartMissionBtn">RESTART MISSION</button>
+    <button id="quitBtn">QUIT TO TITLE</button>
+    <div id="pauseInfo"></div>
+  </div>
+  <div id="deadScreen" class="hidden"><h2>BUSTED / WASTED</h2><p id="deadText"></p><button id="respawnBtn">GET BACK UP — $100</button></div>
+</div>
+<script src="./vendor/three.min.js"></script>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
